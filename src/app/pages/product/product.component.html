@@ -1,0 +1,90 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="80">
+    <h4>Create Product</h4>
+    <form [formGroup]="productForm" (submit)="onSubmit($event)">
+      <mat-form-field class="example-full-width" fxFlexFill>
+        <mat-label>Title</mat-label>
+        <input type="text" matInput formControlName="title" placeholder="Enter title here">
+        <mat-error *ngIf="productForm.get('title')?.errors?.['required']">
+          title is required
+        </mat-error>
+        <mat-error *ngIf="productForm.get('title')?.errors?.['minlength']">
+          min 3 chars is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" fxFlexFill>
+        <mat-label>Description</mat-label>
+        <input type="text" matInput formControlName="description" placeholder="Enter Description here">
+        <mat-error *ngIf="productForm.get('description')?.errors?.['required']">
+          Description is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" fxFlexFill>
+        <mat-label>Price</mat-label>
+        <input type="text" appOnlyNumbers matInput formControlName="price" placeholder="Enter Price here">
+        <mat-error *ngIf="productForm.get('price')?.errors?.['required']">
+          Price is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" fxFlexFill>
+        <mat-label>Image</mat-label>
+        <input type="text" matInput formControlName="image" placeholder="Enter image here">
+        <mat-error *ngIf="productForm.get('image')?.errors?.['required']">
+          Image is required
+        </mat-error>
+      </mat-form-field>
+
+      <div fxLayout="row" fxLayoutAlign="end center" fxFlexFill>
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<!-- <p *ngIf = "!title">title can't be empty</p>
+    <p *ngIf = "title && title.length < 3">title should be min 3 chrs</p>
+    <p *ngIf = "title && title.length > 5">title can't be exceed 5 chrs</p> -->
+<!-- it is in a html way -->
+
+<!-- <p>{{titleErrors()}}</p> -->
+<!-- it is in a js way -->
+
+<!-- <p>{{validTitle}}</p> -->
+<!-- this is ts way approach -->
+
+
+
+<!-- <form [formGroup]="productForm" (submit)="onSubmit($event)"> -->
+<!-- <div> -->
+<!-- <input type="text" [formControl]="title" (keyup)="onTitleKeyUp()"> -->
+<!-- <input type="text" formControlName="title" />
+    </div>
+    <div>Entered title = {{ productForm.get("title")?.value }}</div>
+    <p *ngIf="productForm.get('title')?.errors?.['required']">
+      Title is required
+    </p>
+    <p *ngIf="productForm.get('title')?.errors?.['minlength']">
+      Title min 3 chrs required
+    </p>
+    <p *ngIf="productForm.get('title')?.errors?.['maxlength']">
+      Title max 5 chrs required
+    </p> -->
+<!-- this is reactive way or view js way-->
+
+<!-- <div>
+      <input type="text" formControlName="price" />
+    </div>
+    <div>Entered title = {{ productForm.get("price")?.value }}</div>
+    <p *ngIf="productForm.get('price')?.errors?.['required']">
+      price is required
+    </p>
+    <p *ngIf="productForm.get('price')?.errors?.['pattern']">
+      price is invalid
+    </p>
+
+    <button type="submit" [disabled]="productForm.invalid">Submit</button> -->
+<!-- </form> -->

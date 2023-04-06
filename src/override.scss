@@ -1,0 +1,12 @@
+/* .custom-btn{
+    color: brown;
+    background-color: aliceblue;
+}
+ */
+.mat-mdc-raised-button:not(:disabled).custom-btn{
+    color: rgb(147, 216, 9);
+}
+
+.mat-mdc-raised-button:not(:disabled).custom-btn{
+    background-color: rgb(77, 58, 25);
+}

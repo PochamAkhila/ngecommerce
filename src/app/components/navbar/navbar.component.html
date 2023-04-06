@@ -1,0 +1,35 @@
+<mat-toolbar
+  color="primary"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+>
+  <div>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+  </div>
+  <div>
+    <button
+      *ngFor="let item of menuItems"
+      routerLink="{{ item.link }}"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact:true }"
+      mat-button
+      class="{{ item.className }} favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      {{ item.title }}
+    </button>
+    <!-- <button routerLink= "/product" routerLinkActive="active" mat-button class="product-link" aria-label="Example icon-button with share icon">
+            Product
+        </button>
+        <button  routerLink= "/login" routerLinkActive="active" mat-button class="login-link" aria-label="Example icon-button with share icon">
+            Login
+        </button> -->
+  </div>
+</mat-toolbar>
